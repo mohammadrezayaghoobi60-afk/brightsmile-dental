@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}رزرو نوبت | لبخند روشن{% endblock %}
+{% block content %}
+<section class="booking-layout">
+  <div class="booking-copy"><span class="eyebrow">شروع کنیم</span><h1>برای لبخندتان<br><em>وقت بگذارید.</em></h1><p>با تکمیل فرم، درخواست نوبت خود را ارسال کنید. در این نسخه آزمایشی، درخواست‌ها روی همان رایانه‌ای ذخیره می‌شوند که برنامه را اجرا می‌کند.</p><div class="contact-mini"><b>ساعات کاری</b><span>شنبه تا چهارشنبه · ۹ تا ۱۷</span><b>پرسشی دارید؟</b><span>hello@brightsmile.example</span></div></div>
+  <form class="booking-form" method="post">
+    <h2>درخواست نوبت</h2><p class="form-intro">لطفاً همه فیلدها را تکمیل کنید.</p>
+    <label for="full_name">نام و نام خانوادگی</label><input id="full_name" name="full_name" type="text" autocomplete="name" required maxlength="100" placeholder="نام شما">
+    <label for="email">نشانی ایمیل</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="150" placeholder="name@example.com">
+    <label for="service">چه خدمتی نیاز دارید؟</label><select id="service" name="service" required><option value="">انتخاب خدمت</option>{% for key, name in services %}<option value="{{ key }}">{{ name }}</option>{% endfor %}</select>
+    <label for="appointment_date">تاریخ پیشنهادی</label><input id="appointment_date" name="appointment_date" type="date" min="{{ today }}" required>
+    <button class="button button-primary form-button" type="submit">ارسال درخواست <span>↖</span></button>
+    <small class="privacy-note">نسخه آزمایشی: اطلاعات واقعی یا حساس پزشکی را در این فرم وارد نکنید.</small>
+  </form>
+</section>
+{% endblock %}

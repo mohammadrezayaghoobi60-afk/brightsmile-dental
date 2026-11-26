@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="کلینیک دندان‌پزشکی لبخند روشن؛ مراقبتی دوستانه و آگاهانه برای لبخند شما.">
+  <title>{% block title %}کلینیک دندان‌پزشکی لبخند روشن{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="{{ url_for('home') }}"><span class="brand-mark">✦</span> لبخند<span>روشن</span></a>
+  <nav>
+    <a href="{{ url_for('home') }}">صفحه اصلی</a>
+    <a href="{{ url_for('services') }}">خدمات</a>
+    <a href="{{ url_for('team') }}">تیم ما</a>
+    <a class="nav-cta" href="{{ url_for('appointments') }}">رزرو نوبت</a>
+  </nav>
+</header>
+<main>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-wrap">
+      {% for category, message in messages %}
+        <p class="flash {{ category }}">{{ message }}</p>
+      {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</main>
+<footer class="footer">
+  <div><a class="brand footer-brand" href="{{ url_for('home') }}">✦ لبخند<span>روشن</span></a><p>مراقبت دندان‌پزشکی با آرامش، احترام و توجه به نیازهای شما.</p></div>
+  <div><strong>دسترسی سریع</strong><a href="{{ url_for('services') }}">خدمات</a><a href="{{ url_for('team') }}">تیم ما</a><a href="{{ url_for('appointments') }}">نوبت‌دهی</a></div>
+  <div><strong>ارتباط با ما</strong><span>hello@brightsmile.example</span><span>خیابان نمونه، پلاک ۱۲۳</span><span>شنبه تا چهارشنبه · ۹ تا ۱۷</span></div>
+  <small>این وب‌سایت نمونه است. پیش از انتشار، اطلاعات تماس و نشانی را جایگزین کنید.</small>
+</footer>
+</body>
+</html>

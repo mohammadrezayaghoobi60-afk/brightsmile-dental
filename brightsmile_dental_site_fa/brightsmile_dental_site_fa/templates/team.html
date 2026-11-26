@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}تیم ما | لبخند روشن{% endblock %}
+{% block content %}
+<section class="page-hero"><span class="eyebrow">آشنایی با تیم ما</span><h1>اولویت ما،<br><em>شما هستید.</em></h1><p>تیمی صمیمی که با دقت به شما گوش می‌دهد، توضیح می‌دهد و کمک می‌کند آگاهانه تصمیم بگیرید.</p></section>
+<section class="section team-grid">
+{% for name, role, bio in doctors %}
+  <article class="doctor-card"><div class="doctor-art"><span>✦</span></div><span class="eyebrow">{{ role }}</span><h3>{{ name }}</h3><p>{{ bio }}</p></article>
+{% endfor %}
+</section>
+{% endblock %}

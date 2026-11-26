@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}خدمات دندان‌پزشکی | لبخند روشن{% endblock %}
+{% block content %}
+<section class="page-hero"><span class="eyebrow">خدمات ما</span><h1>مراقبت خوب برای<br><em>هر لبخند.</em></h1><p>خدمات ما را ببینید و برای گفت‌وگو با تیم درمان درباره گزینه‌های مناسب خود نوبت درخواست کنید.</p></section>
+<section class="section service-list">
+{% for key, name in services %}
+  <article class="service-row"><span class="service-symbol">✧</span><div><h3>{{ name }}</h3><p>گزینه‌ها را برایتان توضیح می‌دهیم، به پرسش‌هایتان پاسخ می‌دهیم و در شناخت مراحل بعدی همراهتان هستیم.</p></div><a href="{{ url_for('appointments') }}">درخواست نوبت ↖</a></article>
+{% endfor %}
+</section>
+{% endblock %}

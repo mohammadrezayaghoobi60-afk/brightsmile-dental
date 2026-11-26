@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}درخواست ثبت شد | لبخند روشن{% endblock %}
+{% block content %}
+<section class="success-panel"><div class="success-icon">✓</div><span class="eyebrow">درخواست ذخیره شد</span><h1>{{ full_name }} عزیز، سپاسگزاریم.</h1><p>درخواست نوبت آزمایشی شما روی این رایانه ذخیره شد. این پیام به معنی تأیید نوبت نیست؛ برای قطعی شدن زمان، کلینیک باید با شما تماس بگیرد.</p><a class="button button-primary" href="{{ url_for('home') }}">بازگشت به صفحه اصلی ↖</a></section>
+{% endblock %}
